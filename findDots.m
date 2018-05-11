@@ -76,13 +76,6 @@ keeperBlobs = circularities > circularity_limit;
 roundObjects = find(keeperBlobs);
 % Compute new binary image with only the small, round objects in it.
 BW = ismember(labeledImage, roundObjects) > 0;
-if i==1
-    BW__1 = BW;%Green channel
-elseif i==2
-    BW__2 = BW;%Red channel
-else
-    BW__3 = BW;%Blue channel
-end
 % store centroids in array
 measurements = regionprops(BW,'Centroid');
 allCentroids = [measurements.Centroid];
@@ -123,13 +116,6 @@ keeperBlobs = ((keeperBlobs_1+keeperBlobs_2)==2);
 roundObjects = find(keeperBlobs);
 % Compute new binary image with only the small, triangular objects in it.
 BW = ismember(labeledImage, roundObjects) > 0;
-if i==1
-    BW__1 = BW;%Green
-elseif i==2
-    BW__2 = BW;%Red
-else
-    BW__3 = BW;%Blue
-end
 % store centroids in array
 measurements = regionprops(BW,'Centroid');
 allCentroids = [measurements.Centroid];
@@ -168,13 +154,6 @@ keeperBlobs = ((keeperBlobs_1+keeperBlobs_2)==2);
 roundObjects = find(keeperBlobs);
 % Compute new binary image with only the small, triangular objects in it.
 BW = ismember(labeledImage, roundObjects) > 0;
-if i==1
-    BW__1 = BW ; 
-elseif i==2
-    BW__2 = BW;
-else
-    BW__3 = BW;
-end
 % store centroids in array
 measurements = regionprops(BW,'Centroid');
 allCentroids = [measurements.Centroid];
